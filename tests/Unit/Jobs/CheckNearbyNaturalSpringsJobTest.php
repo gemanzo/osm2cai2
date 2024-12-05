@@ -2,13 +2,12 @@
 
 namespace Tests\Unit\Jobs;
 
-use App\Jobs\CheckNearbyNaturalSpringsJob;
+use Tests\TestCase;
 use App\Models\HikingRoute;
 use App\Models\NaturalSpring;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
+use App\Jobs\CheckNearbyNaturalSpringsJob;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Tests\TestCase;
 
 class CheckNearbyNaturalSpringsJobTest extends TestCase
 {

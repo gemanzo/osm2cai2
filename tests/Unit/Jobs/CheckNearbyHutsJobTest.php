@@ -5,10 +5,9 @@ namespace Tests\Unit\Jobs;
 use App\Jobs\CheckNearbyHutsJob;
 use App\Models\CaiHut;
 use App\Models\HikingRoute;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Tests\TestCase;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class CheckNearbyHutsJobTest extends TestCase
 {
