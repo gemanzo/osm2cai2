@@ -16,7 +16,6 @@ abstract class CheckNearbyEntitiesJob implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     protected Model $sourceModel;
-
     protected $buffer;
 
     public function __construct(Model $sourceModel, $buffer)
@@ -31,7 +30,6 @@ abstract class CheckNearbyEntitiesJob implements ShouldQueue
     }
 
     abstract protected function getTargetTableName(): string;
-
     abstract protected function getRelationshipMethod(): string;
 
     public function handle(): void
@@ -47,7 +45,6 @@ abstract class CheckNearbyEntitiesJob implements ShouldQueue
 
             if ($this->buffer < 0) {
                 Log::warning('Buffer distance must be positive');
-
                 return;
             }
 
@@ -71,7 +68,7 @@ abstract class CheckNearbyEntitiesJob implements ShouldQueue
                 return;
             }
 
-            $nearbyIds = array_map(fn ($entity) => $entity->id, $nearbyEntities);
+            $nearbyIds = array_map(fn($entity) => $entity->id, $nearbyEntities);
 
             $syncData = array_combine(
                 $nearbyIds,

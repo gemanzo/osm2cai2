@@ -7,12 +7,12 @@ use App\Models\HikingRoute;
 use App\Models\Province;
 use App\Models\Sector;
 use App\Models\User;
-use App\Traits\CsvableModelTrait;
-use App\Traits\IntersectingRouteStats;
 use App\Traits\SallableTrait;
 use App\Traits\SpatialDataTrait;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Traits\CsvableModelTrait;
+use App\Traits\IntersectingRouteStats;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Area extends Model
 {
