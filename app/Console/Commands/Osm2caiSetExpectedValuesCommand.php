@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\Area;
+use App\Models\Province;
 use App\Models\Region;
 use App\Models\Sector;
 use Illuminate\Console\Command;

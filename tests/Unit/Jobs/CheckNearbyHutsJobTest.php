@@ -7,7 +7,7 @@ use App\Models\CaiHut;
 use App\Models\HikingRoute;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Tests\TestCase;
 
 class CheckNearbyHutsJobTest extends TestCase
 {

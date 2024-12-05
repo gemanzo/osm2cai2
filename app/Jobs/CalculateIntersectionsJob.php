@@ -239,7 +239,7 @@ class CalculateIntersectionsJob implements ShouldQueue
         Log::info('Calculated percentage:', [
             'base_model' => $baseModel->getTable(),
             'intersecting_model' => $intersectingModel->getTable(),
-            'percentage' => $query[0]->percentage,
+            'percentage' => $percentage[0]->percentage,
         ]);
 
         return (float) ($query[0]->percentage ?? 0.0);

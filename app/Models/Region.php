@@ -11,19 +11,19 @@ use App\Models\HikingRoute;
 use App\Models\MountainGroups;
 use App\Models\Province;
 use App\Models\User;
-use App\Models\EcPoi;
-use App\Models\CaiHut;
-use App\Models\Province;
-use App\Models\HikingRoute;
 use App\Traits\AwsCacheable;
-use App\Traits\SallableTrait;
-use App\Models\MountainGroups;
-use App\Traits\SpatialDataTrait;
 use App\Traits\CsvableModelTrait;
+use App\Traits\IntersectingRouteStats;
+use App\Traits\OsmfeaturesGeometryUpdateTrait;
+use App\Traits\SallableTrait;
+use App\Traits\SpatialDataTrait;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Wm\WmOsmfeatures\Exceptions\WmOsmfeaturesException;
 use Wm\WmOsmfeatures\Interfaces\OsmfeaturesSyncableInterface;
+use Wm\WmOsmfeatures\Traits\OsmfeaturesSyncableTrait;
 
 class Region extends Model implements OsmfeaturesSyncableInterface
 {

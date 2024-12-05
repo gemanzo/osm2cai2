@@ -4,18 +4,16 @@ namespace App\Models;
 
 use App\Jobs\CacheMiturAbruzzoDataJob;
 use App\Jobs\CheckNearbyHikingRoutesJob;
-use App\Models\EcPoi;
 use App\Models\HikingRoute;
-use App\Models\MountainGroups;
 use App\Models\Region;
 use App\Traits\AwsCacheable;
-use App\Traits\SpatialDataTrait;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Database\Eloquent\Model;
 use App\Traits\OsmfeaturesGeometryUpdateTrait;
+use App\Traits\SpatialDataTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Wm\WmOsmfeatures\Traits\OsmfeaturesImportableTrait;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Log;
 use Wm\WmOsmfeatures\Interfaces\OsmfeaturesSyncableInterface;
+use Wm\WmOsmfeatures\Traits\OsmfeaturesImportableTrait;
 
 class CaiHut extends Model implements OsmfeaturesSyncableInterface
 {

@@ -2,10 +2,10 @@
 
 namespace Tests\Unit\Jobs;
 
-use Tests\TestCase;
+use App\Jobs\CheckNearbyNaturalSpringsJob;
 use App\Models\HikingRoute;
 use App\Models\NaturalSpring;
-use App\Jobs\CheckNearbyNaturalSpringsJob;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 

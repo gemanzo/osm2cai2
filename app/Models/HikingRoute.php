@@ -19,6 +19,23 @@ use App\Traits\SpatialDataTrait;
 use App\Traits\TagsMappingTrait;
 use App\Jobs\CacheMiturAbruzzoDataJob;
 use App\Jobs\CalculateIntersectionsJob;
+use App\Jobs\CheckNearbyHutsJob;
+use App\Jobs\CheckNearbyNaturalSpringsJob;
+use App\Jobs\ComputeTdhJob;
+use App\Models\Area;
+use App\Models\CaiHut;
+use App\Models\Itinerary;
+use App\Models\NaturalSpring;
+use App\Models\Province;
+use App\Models\Region;
+use App\Models\Sector;
+use App\Models\User;
+use App\Services\HikingRouteDescriptionService;
+use App\Traits\AwsCacheable;
+use App\Traits\OsmfeaturesGeometryUpdateTrait;
+use App\Traits\SpatialDataTrait;
+use App\Traits\TagsMappingTrait;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
@@ -28,8 +45,9 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Wm\WmOsmfeatures\Traits\OsmfeaturesSyncableTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Wm\WmOsmfeatures\Exceptions\WmOsmfeaturesException;
-use Wm\WmOsmfeatures\Traits\OsmfeaturesImportableTrait;
 use Wm\WmOsmfeatures\Interfaces\OsmfeaturesSyncableInterface;
+use Wm\WmOsmfeatures\Traits\OsmfeaturesImportableTrait;
+use Wm\WmOsmfeatures\Traits\OsmfeaturesSyncableTrait;
 
 class HikingRoute extends Model implements OsmfeaturesSyncableInterface, HasMedia
 {
@@ -380,6 +398,7 @@ class HikingRoute extends Model implements OsmfeaturesSyncableInterface, HasMedi
             }
             $s = implode('; ', $sectors);
         }
+
         return $s;
     }
 
