@@ -5,14 +5,12 @@ namespace App\Models;
 use App\Jobs\CalculateIntersectionsJob;
 use App\Models\HikingRoute;
 use App\Models\User;
-use App\Models\HikingRoute;
-use App\Traits\SallableTrait;
-use App\Traits\SpatialDataTrait;
 use App\Traits\CsvableModelTrait;
 use App\Traits\IntersectingRouteStats;
-use App\Jobs\CalculateIntersectionsJob;
-use Illuminate\Database\Eloquent\Model;
+use App\Traits\SallableTrait;
+use App\Traits\SpatialDataTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Sector extends Model
 {

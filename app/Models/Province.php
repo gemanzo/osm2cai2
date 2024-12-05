@@ -4,20 +4,20 @@ namespace App\Models;
 
 use App\Jobs\CalculateIntersectionsJob;
 use App\Models\Area;
-use App\Models\User;
-use App\Models\Region;
 use App\Models\HikingRoute;
+use App\Models\Region;
+use App\Models\User;
 use App\Traits\SallableTrait;
 use App\Traits\SpatialDataTrait;
 use App\Traits\CsvableModelTrait;
-use Illuminate\Support\Facades\Log;
 use App\Traits\IntersectingRouteStats;
-use Illuminate\Database\Eloquent\Model;
 use App\Traits\OsmfeaturesGeometryUpdateTrait;
-use Wm\WmOsmfeatures\Traits\OsmfeaturesSyncableTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Log;
 use Wm\WmOsmfeatures\Exceptions\WmOsmfeaturesException;
 use Wm\WmOsmfeatures\Interfaces\OsmfeaturesSyncableInterface;
+use Wm\WmOsmfeatures\Traits\OsmfeaturesSyncableTrait;
 
 class Province extends Model implements OsmfeaturesSyncableInterface
 {
