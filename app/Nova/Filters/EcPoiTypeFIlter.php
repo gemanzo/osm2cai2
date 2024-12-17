@@ -41,7 +41,6 @@ class EcPoiTypeFIlter extends Filter
             ->distinct()
             ->whereNotNull('type')
             ->get();
-
         return $types->pluck('type', 'type')->toArray();
     }
 }

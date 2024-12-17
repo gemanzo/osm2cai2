@@ -3,42 +3,25 @@
 namespace App\Models;
 
 use App\Jobs\CheckNearbyEcPoisJob;
-use App\Jobs\CheckNearbyNaturalSpringsJob;
-use App\Models\Area;
-use App\Models\CaiHut;
-use App\Models\EcPoi;
-use App\Models\Region;
-use App\Models\Sector;
-use App\Models\Province;
-use App\Models\Itinerary;
-use App\Jobs\ComputeTdhJob;
-use App\Traits\AwsCacheable;
-use App\Models\NaturalSpring;
-use App\Jobs\CheckNearbyHutsJob;
-use App\Traits\SpatialDataTrait;
-use App\Traits\TagsMappingTrait;
 use App\Jobs\CacheMiturAbruzzoDataJob;
 use App\Jobs\CalculateIntersectionsJob;
-use App\Jobs\CheckNearbyHutsJob;
 use App\Jobs\CheckNearbyNaturalSpringsJob;
-use App\Jobs\ComputeTdhJob;
 use App\Models\Area;
+use App\Models\User;
+use App\Models\EcPoi;
 use App\Models\CaiHut;
-use App\Models\Itinerary;
-use App\Models\NaturalSpring;
-use App\Models\Province;
 use App\Models\Region;
 use App\Models\Sector;
-use App\Models\User;
-use App\Services\HikingRouteDescriptionService;
+use App\Models\Province;
+use App\Models\Itinerary;
+use App\Jobs\ComputeTdhJob;
 use App\Traits\AwsCacheable;
-use App\Traits\OsmfeaturesGeometryUpdateTrait;
+use App\Models\NaturalSpring;
+use App\Jobs\CheckNearbyHutsJob;
 use App\Traits\SpatialDataTrait;
 use App\Traits\TagsMappingTrait;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -47,7 +30,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Wm\WmOsmfeatures\Exceptions\WmOsmfeaturesException;
 use Wm\WmOsmfeatures\Interfaces\OsmfeaturesSyncableInterface;
 use Wm\WmOsmfeatures\Traits\OsmfeaturesImportableTrait;
-use Wm\WmOsmfeatures\Traits\OsmfeaturesSyncableTrait;
 
 class HikingRoute extends Model implements OsmfeaturesSyncableInterface, HasMedia
 {
@@ -362,25 +344,6 @@ class HikingRoute extends Model implements OsmfeaturesSyncableInterface, HasMedi
         }
 
         return Sector::find($sectorId[0]->sector_id);
-    }
-
-    /**
-     * It returns a string with all hiking routes sectors full codes separated by ';'
-     *
-     * @return string
-     */
-    public function getSectorsString(): string
-    {
-        $s = 'ND';
-        if (count($this->sectors) > 0) {
-            $sectors = [];
-            foreach ($this->sectors as $sector) {
-                $sectors[] = $sector->full_code . '(' . number_format($sector->pivot->percentage * 100, 2) . '%)';
-            }
-            $s = implode('; ', $sectors);
-        }
-
-        return $s;
     }
 
     /**
@@ -811,4 +774,5 @@ SQL;
 
         return $mainSector->full_code . '????';
     }
+
 }

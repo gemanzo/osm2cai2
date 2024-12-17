@@ -67,7 +67,6 @@ class Itinerary extends Resource
                         $totalKm += $route->distance_comp;
                     }
                 }
-
                 return round($totalKm, 2);
             })->hideWhenCreating()->hideWhenUpdating(),
             BelongsToMany::make(__('Itinerari'), 'hikingRoutes', HikingRoute::class)->searchable(),

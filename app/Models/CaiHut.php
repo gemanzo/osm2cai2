@@ -7,13 +7,15 @@ use App\Jobs\CheckNearbyHikingRoutesJob;
 use App\Models\HikingRoute;
 use App\Models\Region;
 use App\Traits\AwsCacheable;
-use App\Traits\OsmfeaturesGeometryUpdateTrait;
+use App\Models\MountainGroups;
 use App\Traits\SpatialDataTrait;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
-use Wm\WmOsmfeatures\Interfaces\OsmfeaturesSyncableInterface;
+use Illuminate\Database\Eloquent\Model;
+use App\Traits\OsmfeaturesGeometryUpdateTrait;
+use App\Console\Commands\CheckNearbyHikingRoutes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Wm\WmOsmfeatures\Traits\OsmfeaturesImportableTrait;
+use Wm\WmOsmfeatures\Interfaces\OsmfeaturesSyncableInterface;
 
 class CaiHut extends Model implements OsmfeaturesSyncableInterface
 {

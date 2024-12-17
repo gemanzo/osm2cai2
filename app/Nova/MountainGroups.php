@@ -34,7 +34,6 @@ class MountainGroups extends Resource
     {
         return 'Gruppi Montuosi';
     }
-
     /**
      * The columns that should be searched.
      *

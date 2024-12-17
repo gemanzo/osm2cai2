@@ -38,7 +38,6 @@ class ProvinceFilter extends Filter
                 $query->where('province_id', $value);
             });
         }
-
         return $query->where('province_id', $value);
     }
 
@@ -61,7 +60,6 @@ class ProvinceFilter extends Filter
                 $options[$item->name] = $item->id;
             }
         }
-
         return $options;
     }
 }

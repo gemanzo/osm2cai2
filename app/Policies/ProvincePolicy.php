@@ -32,7 +32,6 @@ class ProvincePolicy
     {
         $modelQuery = $province->newQuery();
         $userModels = $modelQuery->ownedBy($user)->get('id');
-
         return $this->hasAllowedRole($user) || $userModels->contains($province->id);
     }
 

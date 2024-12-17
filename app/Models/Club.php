@@ -8,10 +8,10 @@ use App\Models\MountainGroups;
 use App\Models\Region;
 use App\Models\User;
 use App\Traits\AwsCacheable;
-use App\Traits\CsvableModelTrait;
 use App\Traits\SpatialDataTrait;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Traits\CsvableModelTrait;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Club extends Model
 {

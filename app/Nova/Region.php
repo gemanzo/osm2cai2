@@ -2,23 +2,22 @@
 
 namespace App\Nova;
 
-use App\Helpers\Osm2caiHelper;
-use App\Nova\Actions\CacheMiturApi;
-use App\Nova\Actions\DownloadCsvCompleteAction;
-use App\Nova\Actions\DownloadGeojson;
-use App\Nova\Actions\DownloadGeojsonCompleteAction;
-use App\Nova\Actions\DownloadKml;
-use App\Nova\Actions\DownloadShape;
+use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Code;
-use Laravel\Nova\Fields\DateTime;
-use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Http\Requests\NovaRequest;
-use Laravel\Nova\Panel;
+use App\Helpers\Osm2caiHelper;
+use Laravel\Nova\Fields\Number;
+use App\Nova\Actions\DownloadKml;
+use Laravel\Nova\Fields\DateTime;
+use App\Nova\Actions\CacheMiturApi;
+use App\Nova\Actions\DownloadShape;
+use App\Nova\Actions\DownloadGeojson;
 use Wm\MapMultiPolygon\MapMultiPolygon;
 use Wm\WmPackage\Nova\Actions\ExportTo;
+use Laravel\Nova\Http\Requests\NovaRequest;
+use App\Nova\Actions\DownloadCsvCompleteAction;
+use App\Nova\Actions\DownloadGeojsonCompleteAction;
 
 class Region extends Resource
 {

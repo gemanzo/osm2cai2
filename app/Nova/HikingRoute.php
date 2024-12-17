@@ -45,6 +45,7 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
+
 class HikingRoute extends OsmfeaturesResource
 {
     use HasTabs;
@@ -223,7 +224,6 @@ class HikingRoute extends OsmfeaturesResource
             (new SDAFilter),
         ];
         $filters = array_merge($parentFilters, $specificFilters);
-
         return $filters;
     }
 
@@ -351,7 +351,6 @@ class HikingRoute extends OsmfeaturesResource
                 ->cancelButtonText('Annulla')
                 ->canSee(function ($request) {
                     $u = auth()->user();
-
                     return $u->is_administrator || $u->is_national_referent;
                 })
                 ->canRun(
@@ -590,7 +589,6 @@ class HikingRoute extends OsmfeaturesResource
             if ($label == 'CAI Difficulty') {
                 return $this->createField($label, $config[0], $config[1], null, false, false);
             }
-
             return $this->createField($label, $config[0], $config[1], null, false, true);
         }, array_keys($techFields), $techFields);
     }
@@ -639,7 +637,7 @@ class HikingRoute extends OsmfeaturesResource
                 $user = User::find($this->model()->issues_user_id);
 
                 return $user
-                    ? '<a style="color:blue;" href="'.url('/resources/users/'.$user->id).'" target="_blank">'.$user->name.'</a>'
+                    ? '<a style="color:blue;" href="' . url('/resources/users/' . $user->id) . '" target="_blank">' . $user->name . '</a>'
                     : 'No user';
             })->hideFromIndex()->asHtml(),
             Text::make(__('Walkability History'), 'issues_chronology')->onlyOnDetail(),

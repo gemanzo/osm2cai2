@@ -24,7 +24,6 @@ class ValidateHikingRouteAction extends Action
     use InteractsWithQueue, Queueable, SerializesModels;
 
     public $showOnDetail = true;
-
     public $showOnIndex = false;
 
     public $name = 'VALIDATE';
