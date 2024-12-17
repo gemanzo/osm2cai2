@@ -118,6 +118,7 @@ class Region extends Model implements OsmfeaturesSyncableInterface
     public function scopeOwnedBy($query, User $user)
     {
         $userModelId = $user->region ? $user->region->id : 0;
+
         return $query->where('id', $userModelId);
     }
 
@@ -155,7 +156,7 @@ class Region extends Model implements OsmfeaturesSyncableInterface
         $osmfeaturesData = is_string($model->osmfeatures_data) ? json_decode($model->osmfeatures_data, true) : $model->osmfeatures_data;
 
         if (! $osmfeaturesData) {
-            Log::channel('wm-osmfeatures')->info('No data found for Region ' . $osmfeaturesId);
+            Log::channel('wm-osmfeatures')->info('No data found for Region '.$osmfeaturesId);
 
             return;
         }
@@ -167,7 +168,7 @@ class Region extends Model implements OsmfeaturesSyncableInterface
         $newName = $osmfeaturesData['properties']['name'] ?? null;
         if ($newName !== $model->name) {
             $updateData['name'] = $newName;
-            Log::channel('wm-osmfeatures')->info('Name updated for Region ' . $osmfeaturesId);
+            Log::channel('wm-osmfeatures')->info('Name updated for Region '.$osmfeaturesId);
         }
 
         // Execute the update only if there are data to update
@@ -225,7 +226,7 @@ class Region extends Model implements OsmfeaturesSyncableInterface
                     'updated_at' => $hikingRoute->updated_at,
                     'osm2cai_status' => $hikingRoute->osm2cai_status,
                     'osm_id' => $osmfeaturesData['properties']['osm_id'],
-                    'osm2cai' => url('/nova/resources/hiking-routes/' . $hikingRoute->id . '/edit'),
+                    'osm2cai' => url('/nova/resources/hiking-routes/'.$hikingRoute->id.'/edit'),
                     'survey_date' => $osmfeaturesDataProperties['survey_date'],
                     'accessibility' => $hikingRoute->issues_status,
 
@@ -355,6 +356,7 @@ class Region extends Model implements OsmfeaturesSyncableInterface
             if (stripos($this->name, $name) !== false) {
                 $this->code = $code;
                 $this->saveQuietly();
+
                 return;
             }
         }

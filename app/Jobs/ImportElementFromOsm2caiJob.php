@@ -8,14 +8,14 @@ use App\Models\Province;
 use App\Models\Region;
 use Illuminate\Bus\Batchable;
 use Illuminate\Bus\Queueable;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class ImportElementFromOsm2caiJob implements ShouldQueue
 {
@@ -44,7 +44,7 @@ class ImportElementFromOsm2caiJob implements ShouldQueue
         $legacyDbConnection = DB::connection('legacyosm2cai');
 
         if ($modelInstance->where('id', $this->data['id'])->exists()) {
-            Log::info($modelInstance.' with id: '.$this->data['id'].' already imported, skipping');
+            Log::info($modelInstance . ' with id: ' . $this->data['id'] . ' already imported, skipping');
 
             return;
         }
@@ -371,7 +371,7 @@ class ImportElementFromOsm2caiJob implements ShouldQueue
                     if (! isset($legacyHr[$id])) {
                         return null;
                     }
-                    $osmId = 'R'.$legacyHr[$id]->relation_id;
+                    $osmId = 'R' . $legacyHr[$id]->relation_id;
                     $hr = HikingRoute::where('osmfeatures_id', $osmId)->first();
 
                     return $hr ? $hr->id : null;
@@ -380,7 +380,7 @@ class ImportElementFromOsm2caiJob implements ShouldQueue
                     if (! isset($legacyHr[$id])) {
                         return null;
                     }
-                    $osmId = 'R'.$legacyHr[$id]->relation_id;
+                    $osmId = 'R' . $legacyHr[$id]->relation_id;
                     $hr = HikingRoute::where('osmfeatures_id', $osmId)->first();
 
                     return $hr ? $hr->id : null;
@@ -401,7 +401,7 @@ class ImportElementFromOsm2caiJob implements ShouldQueue
             ->get('relation_id')
             ->toArray();
         $hrIds = array_map(function ($hr) {
-            return 'R'.$hr->relation_id;
+            return 'R' . $hr->relation_id;
         }, $legacyHr);
         $hrs = HikingRoute::whereIn('osmfeatures_id', $hrIds)->get();
 
@@ -411,7 +411,7 @@ class ImportElementFromOsm2caiJob implements ShouldQueue
     private function prepareGeometry(array $geometry)
     {
         if ($geometry !== null) {
-            $geometry = DB::raw("ST_SetSRID(ST_GeomFromGeoJSON('".json_encode($geometry)."'), 4326)");
+            $geometry = DB::raw("ST_SetSRID(ST_GeomFromGeoJSON('" . json_encode($geometry) . "'), 4326)");
         }
 
         return $geometry;

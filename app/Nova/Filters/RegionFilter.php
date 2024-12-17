@@ -56,6 +56,7 @@ class RegionFilter extends Filter
         foreach (Region::all() as $region) {
             $options[$region->name] = $region->id;
         }
+
         return $options;
     }
 }

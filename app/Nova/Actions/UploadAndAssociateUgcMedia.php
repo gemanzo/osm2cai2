@@ -18,6 +18,7 @@ class UploadAndAssociateUgcMedia extends Action
     use InteractsWithQueue, Queueable;
 
     public $showOnDetail = true;
+
     public $showOnTableRow = true;
 
     public function __construct()

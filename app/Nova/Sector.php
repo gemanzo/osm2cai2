@@ -188,6 +188,7 @@ class Sector extends Resource
                 $this->getSdaSectorCard(4, $numbers[4], $request),
             ];
         }
+
         return [];
     }
 
@@ -216,7 +217,7 @@ class Sector extends Resource
             $filter = base64_encode(json_encode($availableFilters));
 
             // Build the URL
-            $link = trim(Nova::path(), '/').'/resources/hiking-routes/lens/hiking-routes-status-'.$sda.'-lens?hiking-routes_filter='.$filter;
+            $link = trim(Nova::path(), '/') . '/resources/hiking-routes/lens/hiking-routes-status-' . $sda . '-lens?hiking-routes_filter=' . $filter;
             $exploreUrl = $link;
         }
 

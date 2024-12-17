@@ -11,6 +11,8 @@ use App\Models\User;
 use App\Traits\AwsCacheable;
 use App\Traits\SpatialDataTrait;
 use App\Traits\TagsMappingTrait;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Wm\WmOsmfeatures\Exceptions\WmOsmfeaturesException;

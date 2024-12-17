@@ -95,6 +95,7 @@ class Province extends Resource
         foreach ($this->areas as $area) {
             $sectorsCount += count($area->sectors);
         }
+
         return [
             ID::make()->sortable(),
             Text::make('Name', 'name')->sortable(),
@@ -201,6 +202,7 @@ class Province extends Resource
                 $this->getSdaProvinceCard(4, $numbers[4], $request),
             ];
         }
+
         return [];
     }
 

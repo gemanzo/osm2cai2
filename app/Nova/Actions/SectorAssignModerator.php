@@ -22,6 +22,7 @@ class SectorAssignModerator extends Action
     use InteractsWithQueue, Queueable;
 
     public $showOnDetail = true;
+
     public $showOnIndex = false;
 
     public function __construct()

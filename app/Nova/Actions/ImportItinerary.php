@@ -56,6 +56,7 @@ class ImportItinerary extends Action
             }
         } catch (\Exception $e) {
             Log::error($e->getMessage());
+
             return Action::danger(__('Error creating itinerary.'));
         }
     }

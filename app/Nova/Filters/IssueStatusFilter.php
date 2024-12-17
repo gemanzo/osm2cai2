@@ -42,6 +42,7 @@ class IssueStatusFilter extends Filter
         foreach (IssuesStatusEnum::cases() as $item) {
             $options[$item->name] = $item->value;
         }
+
         return $options;
     }
 }

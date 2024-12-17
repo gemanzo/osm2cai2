@@ -77,6 +77,7 @@ class ImportPois extends Action
             $data = $response->json();
             if ($data === null) {
                 Log::info("OSM ID $osmId not found");
+
                 return $abort;
             }
             $elements = $data['elements'];
@@ -110,12 +111,14 @@ class ImportPois extends Action
                 }
             }
         }
+
         return Action::message('Import completato');
     }
 
     private function parseOsmIds($osm_ids_string)
     {
         $osm_ids = explode(',', str_replace(' ', '', $osm_ids_string));
+
         return array_unique($osm_ids);
     }
 
@@ -164,6 +167,7 @@ class ImportPois extends Action
         if (strlen($osmId) < 1) {
             return false;
         }
+
         return true;
     }
 
