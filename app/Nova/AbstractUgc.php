@@ -9,10 +9,7 @@ use App\Nova\Actions\UploadAndAssociateUgcMedia;
 use App\Nova\Filters\RelatedUGCFilter;
 use App\Nova\Filters\UgcAppIdFilter;
 use App\Nova\Filters\ValidatedFilter;
-use App\Nova\UgcTrack as UgcTrackResource;
-use App\Traits\Nova\RawDataFieldsTrait;
 use App\Traits\Nova\WmNovaFieldsTrait;
-use Idez\DateRangeFilter\DateRangeFilter;
 use Idez\DateRangeFilter\Enums\Config;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
@@ -44,7 +41,7 @@ abstract class AbstractUgc extends Resource
      */
     public function validatedStatusOptions()
     {
-        return Arr::mapWithKeys(ValidatedStatusEnum::cases(), fn ($enum) => [$enum->value => $enum->name]);
+        return Arr::mapWithKeys(ValidatedStatusEnum::cases(), fn($enum) => [$enum->value => $enum->name]);
     }
 
     /**
@@ -135,7 +132,7 @@ abstract class AbstractUgc extends Resource
                 $html .= '</div>';
 
                 return $html;
-            })->asHtml()->onlyOnDetail(),
+            })->asHtml()->onlyOnDetail()
         ];
 
         $formFields = $this->jsonForm('raw_data');

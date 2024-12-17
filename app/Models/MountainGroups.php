@@ -6,10 +6,13 @@ use App\Models\CaiHut;
 use App\Models\Club;
 use App\Models\HikingRoute;
 use App\Models\Region;
+use App\Models\HikingRoute;
 use App\Traits\AwsCacheable;
 use App\Traits\SpatialDataTrait;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Jobs\CacheMiturAbruzzoDataJob;
+use App\Jobs\CalculateIntersectionsJob;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class MountainGroups extends Model
 {

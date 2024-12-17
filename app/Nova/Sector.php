@@ -22,8 +22,6 @@ use InteractionDesignFoundation\HtmlCard\HtmlCard;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\File;
-use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Nova;
@@ -190,7 +188,6 @@ class Sector extends Resource
                 $this->getSdaSectorCard(4, $numbers[4], $request),
             ];
         }
-
         return [];
     }
 

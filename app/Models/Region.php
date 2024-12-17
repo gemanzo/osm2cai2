@@ -118,7 +118,6 @@ class Region extends Model implements OsmfeaturesSyncableInterface
     public function scopeOwnedBy($query, User $user)
     {
         $userModelId = $user->region ? $user->region->id : 0;
-
         return $query->where('id', $userModelId);
     }
 
@@ -356,7 +355,6 @@ class Region extends Model implements OsmfeaturesSyncableInterface
             if (stripos($this->name, $name) !== false) {
                 $this->code = $code;
                 $this->saveQuietly();
-
                 return;
             }
         }

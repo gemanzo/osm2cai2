@@ -93,7 +93,6 @@ class HikingRoutesStatusLens extends Lens
                         $val = implode(', ', $this->sectors->pluck('name')->toArray());
                     }
                 }
-
                 return $val;
             })->onlyOnIndex(),
             Text::make('REF', 'ref')->onlyOnIndex(),

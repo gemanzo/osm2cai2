@@ -184,7 +184,7 @@ class CalculateIntersectionsJob implements ShouldQueue
      */
     private function calculateIntersectionPercentage($baseModel, $intersectingModel): float
     {
-        if (! $intersectingModel) {
+        if (!$intersectingModel) {
             throw new \Exception('Intersecting model not found');
         }
 
@@ -239,7 +239,7 @@ class CalculateIntersectionsJob implements ShouldQueue
         Log::info('Calculated percentage:', [
             'base_model' => $baseModel->getTable(),
             'intersecting_model' => $intersectingModel->getTable(),
-            'percentage' => $percentage[0]->percentage,
+            'percentage' => $query[0]->percentage,
         ]);
 
         return (float) ($query[0]->percentage ?? 0.0);

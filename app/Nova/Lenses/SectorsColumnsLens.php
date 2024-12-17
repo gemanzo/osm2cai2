@@ -94,7 +94,6 @@ class NoResponsabileSectorsColumnsLens extends SectorsColumnsLens
     {
         return 'Senza colonna resposabile';
     }
-
     public function uriKey()
     {
         return 'no-resposabile';
@@ -116,7 +115,6 @@ class NoNameSectorsColumnsLens extends SectorsColumnsLens
     {
         return 'Senza colonna nome';
     }
-
     public function uriKey()
     {
         return 'no-name';
@@ -138,7 +136,6 @@ class NoNumExpectedColumnsLens extends SectorsColumnsLens
     {
         return 'Senza colonna numero atteso';
     }
-
     public function uriKey()
     {
         return 'no-num-expected';

@@ -37,7 +37,6 @@ class AreaFilter extends Filter
                 $query->where('area_id', $value);
             });
         }
-
         return $query->where('area_id', $value);
     }
 

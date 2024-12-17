@@ -57,7 +57,6 @@ class SectorFilter extends Filter
                 $options[$item->full_code] = $item->id;
             }
         }
-
         return $options;
     }
 }

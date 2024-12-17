@@ -17,7 +17,6 @@ class DeleteUgcMedia extends Action
     use Queueable;
 
     public $showOnDetail = true;
-
     public $showOnTableRow = true;
 
     public $model;
@@ -67,7 +66,6 @@ class DeleteUgcMedia extends Action
     {
         $medias = $this->model->ugc_media()->get();
         $options = $medias->pluck('id', 'id');
-
         return [
             Select::make(__('Image'), 'ugc_media_id')
                 ->options($options)
