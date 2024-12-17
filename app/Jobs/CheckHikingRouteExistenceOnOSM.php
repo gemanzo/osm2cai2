@@ -15,6 +15,7 @@ class CheckHikingRouteExistenceOnOSM implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     protected HikingRoute $hr;
+
     protected OsmService $service;
 
     /**

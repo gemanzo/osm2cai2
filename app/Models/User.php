@@ -4,10 +4,11 @@ namespace App\Models;
 
 use App\Models\Area;
 use App\Models\Club;
+use App\Models\HikingRoute;
+use App\Models\Province;
 use App\Models\Region;
 use App\Models\Sector;
 use App\Models\UgcPoi;
-use App\Models\Province;
 use App\Models\UgcTrack;
 use Illuminate\Database\Eloquent\Collection;
 use Wm\WmPackage\Models\User as WmUser;

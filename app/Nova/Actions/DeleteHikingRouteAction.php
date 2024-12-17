@@ -48,6 +48,7 @@ class DeleteHikingRouteAction extends DestructiveAction
                     return Action::danger(__('You can not delete this Hiking Route because it is not deleted from OSM'));
                 }
             }
+
             return Action::redirect('/resources/hiking-routes');
         } else {
             return Action::danger(__('You do not have permissions to delete this Hiking Route'));

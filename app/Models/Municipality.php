@@ -78,6 +78,7 @@ class Municipality extends Model implements OsmfeaturesSyncableInterface
 
         $model->update($updateData);
     }
+
     public function ecPois()
     {
         return $this->belongsToMany(EcPoi::class, 'ec_poi_municipality', 'municipality_id', 'ec_poi_id');

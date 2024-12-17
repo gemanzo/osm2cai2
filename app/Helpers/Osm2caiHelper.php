@@ -20,7 +20,7 @@ class Osm2caiHelper
         };
         $osmid = substr($id, 1);
 
-        return 'https://www.openstreetmap.org/' . $finalType . '/' . $osmid;
+        return 'https://www.openstreetmap.org/'.$finalType.'/'.$osmid;
     }
 
     /**
@@ -83,7 +83,6 @@ class Osm2caiHelper
             return json_encode($dataOrdered, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
         });
     }
-
 
     /**
      * It returns RGB string for SAL color according to the following rules
