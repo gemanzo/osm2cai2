@@ -1,5 +1,40 @@
 # Changelog
 
+## [1.17.0](https://github.com/gemanzo/osm2cai2/compare/v1.16.0...v1.17.0) (2024-12-18)
+
+
+### Features
+
+* added almost all elements to login with the cas system ([7509ba6](https://github.com/gemanzo/osm2cai2/commit/7509ba666e9218eb290753806fcbf4b2d35704a6))
+* dashboards OC: 4224 ([#79](https://github.com/gemanzo/osm2cai2/issues/79)) ([ce5cfc6](https://github.com/gemanzo/osm2cai2/commit/ce5cfc6b8c1ee5691af47d1ad82921a4cd0a15b2))
+* e2e tests setup OC:4057 ([#65](https://github.com/gemanzo/osm2cai2/issues/65)) ([f3e8b61](https://github.com/gemanzo/osm2cai2/commit/f3e8b615f0ebfc4705757b7c297cc9b74c14c7b7))
+* enable xdebug code coverage feature oc:4354 ([9600459](https://github.com/gemanzo/osm2cai2/commit/96004599190ea391cc38945b9d72f1860a7ea67e))
+* Permessi Utente OC:4228 ([#78](https://github.com/gemanzo/osm2cai2/issues/78)) ([3cc9988](https://github.com/gemanzo/osm2cai2/commit/3cc998865c3e8e815abe81e32e5ec3fd8ab2357f))
+* Rifinimento Risorse Nova OC: 4366 ([#85](https://github.com/gemanzo/osm2cai2/issues/85)) ([9d92396](https://github.com/gemanzo/osm2cai2/commit/9d92396fa2ec5f20937c57cb38a69a0a0ad9b49e))
+* sync ugc from legacy osm2cai OC: 3470 ([#71](https://github.com/gemanzo/osm2cai2/issues/71)) ([8dc5b63](https://github.com/gemanzo/osm2cai2/commit/8dc5b633afccacb5a63cdae95c93e543eff5292f))
+* update nova Login.vue oc: 4227 ([99ad919](https://github.com/gemanzo/osm2cai2/commit/99ad91937dca7bca625be94824ab2e6e5a4c3823))
+* update the wm-package oc: 4227 ([e3e494d](https://github.com/gemanzo/osm2cai2/commit/e3e494d7930656742cef3ccc8dca3aa6d905d12b))
+
+
+### Bug Fixes
+
+* cas auth oc: 4227 ([08d545b](https://github.com/gemanzo/osm2cai2/commit/08d545bc310923d6fc388cb955d0b588a798fd39))
+* deploy prod workflow ([b0512d9](https://github.com/gemanzo/osm2cai2/commit/b0512d9947b41820d7b35001da203009f236ae8d))
+* dev deploy scripts to inherit secrets ([b08bd77](https://github.com/gemanzo/osm2cai2/commit/b08bd77ebc0ba8be405d7090f790c0df60c69ab9))
+* geojson controller test ([ae6973f](https://github.com/gemanzo/osm2cai2/commit/ae6973f903bafff0a2672a5155b6f3c07a3d3440))
+* geojson controller test ([84a4383](https://github.com/gemanzo/osm2cai2/commit/84a43833142500d121fcdee68b04e7b1967f7406))
+* gitmodules file ([e5875a0](https://github.com/gemanzo/osm2cai2/commit/e5875a04c3ea67786d45b9c90cd01b34047daba6))
+* submodules dependencies in tests workflow ([3ef7036](https://github.com/gemanzo/osm2cai2/commit/3ef7036928f9ff2311644f46fc738cfb52168b17))
+
+
+### Miscellaneous Chores
+
+* Add submodules for wm-osmfeatures and wm-package ([8a517db](https://github.com/gemanzo/osm2cai2/commit/8a517db8b687990fe151b6b183bd4bc04c394e41))
+* import command wrapper OC:4369 ([#87](https://github.com/gemanzo/osm2cai2/issues/87)) ([a275a59](https://github.com/gemanzo/osm2cai2/commit/a275a5985c43407542675a2f09be04c5ea7be9b8))
+* recalculate intersections job now extends basejob class from wm-package ([425493c](https://github.com/gemanzo/osm2cai2/commit/425493cdf6257bab95c62fd9f255c0ce29514ba0))
+* rifinitura modelli laravel OC:4367 ([#84](https://github.com/gemanzo/osm2cai2/issues/84)) ([258a2a8](https://github.com/gemanzo/osm2cai2/commit/258a2a8ff894ab914a2b2cef376de4c852d14f95))
+* updated packages as submodules ([81cc03e](https://github.com/gemanzo/osm2cai2/commit/81cc03e701ddb9ef7d4c037370c77613388657b6))
+
 ## [1.16.0](https://github.com/webmappsrl/osm2cai2/compare/v1.15.0...v1.16.0) (2024-05-09)
 
 
