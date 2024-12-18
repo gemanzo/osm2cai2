@@ -2,10 +2,6 @@
 
 namespace App\Models;
 
-use App\Jobs\CheckNearbyEcPoisJob;
-use App\Jobs\CacheMiturAbruzzoDataJob;
-use App\Jobs\CalculateIntersectionsJob;
-use App\Jobs\CheckNearbyNaturalSpringsJob;
 use App\Models\Area;
 use App\Models\User;
 use App\Models\EcPoi;
@@ -20,14 +16,18 @@ use App\Models\NaturalSpring;
 use App\Jobs\CheckNearbyHutsJob;
 use App\Traits\SpatialDataTrait;
 use App\Traits\TagsMappingTrait;
-use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia;
+use App\Jobs\CheckNearbyEcPoisJob;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Spatie\MediaLibrary\HasMedia;
+use Illuminate\Support\Facades\Http;
+use App\Jobs\CacheMiturAbruzzoDataJob;
+use App\Jobs\CalculateIntersectionsJob;
+use Illuminate\Database\Eloquent\Model;
+use App\Jobs\CheckNearbyNaturalSpringsJob;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Wm\WmOsmfeatures\Traits\OsmfeaturesSyncableTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Support\Facades\Http;
 use Wm\WmOsmfeatures\Exceptions\WmOsmfeaturesException;
 use Wm\WmOsmfeatures\Interfaces\OsmfeaturesSyncableInterface;
 use Wm\WmOsmfeatures\Traits\OsmfeaturesImportableTrait;
