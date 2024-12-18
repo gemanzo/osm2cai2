@@ -45,7 +45,7 @@ class OneTimeImport extends Command
      */
     public function handle()
     {
-        $this->info('Starting ' . env('APP_NAME') . ' one-time import...');
+        $this->info('Starting '.env('APP_NAME').' one-time import...');
 
         $this->importEntities();
         $this->importLegacyData();
@@ -66,9 +66,9 @@ class OneTimeImport extends Command
         ];
 
         foreach ($commands as $cmd) {
-            $this->info('Running: ' . $cmd['description']);
+            $this->info('Running: '.$cmd['description']);
             Artisan::call($cmd['command']);
-            $this->info('✓ ' . $cmd['description'] . ' completed');
+            $this->info('✓ '.$cmd['description'].' completed');
         }
     }
 
