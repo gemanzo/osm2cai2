@@ -2,22 +2,22 @@
 
 namespace App\Models;
 
-use App\Jobs\CacheMiturAbruzzoDataJob;
-use App\Jobs\CheckNearbyHikingRoutesJob;
-use App\Jobs\CheckNearbyHutsJob;
 use App\Models\Club;
-use App\Models\Region;
 use App\Models\User;
+use App\Models\Region;
 use App\Traits\AwsCacheable;
+use App\Jobs\CheckNearbyHutsJob;
 use App\Traits\SpatialDataTrait;
 use App\Traits\TagsMappingTrait;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use App\Jobs\CacheMiturAbruzzoDataJob;
+use Illuminate\Database\Eloquent\Model;
+use App\Jobs\CheckNearbyHikingRoutesJob;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Wm\WmOsmfeatures\Exceptions\WmOsmfeaturesException;
-use Wm\WmOsmfeatures\Interfaces\OsmfeaturesSyncableInterface;
 use Wm\WmOsmfeatures\Traits\OsmfeaturesImportableTrait;
+use Wm\WmOsmfeatures\Interfaces\OsmfeaturesSyncableInterface;
 
 class EcPoi extends Model implements OsmfeaturesSyncableInterface
 {
