@@ -32,7 +32,6 @@
         "rap2hpoutre/laravel-log-viewer": "^2.4",
         "spatie/db-dumper": "^3.3",
         "spatie/laravel-medialibrary": "^11.11",
-        "spatie/laravel-permission": "^6.9",
         "spatie/laravel-translatable": "^6.3",
         "spatie/schema-org": "^3.23",
         "subfission/cas": "^5.1",
