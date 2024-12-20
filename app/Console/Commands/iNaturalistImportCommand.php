@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Log;
 class iNaturalistImportCommand extends Command
 {
     protected $signature = 'osm2cai:inaturalist-import {ids?*} {--file= : File path containing IDs}';
-
     protected $description = 'Import UGC POIs from iNaturalist';
 
     // Constants definition
@@ -34,7 +33,6 @@ class iNaturalistImportCommand extends Command
 
         if (empty($ids)) {
             $this->error('No IDs provided.');
-
             return 1;
         }
 
@@ -45,7 +43,6 @@ class iNaturalistImportCommand extends Command
         }
 
         $this->info('Import completed.');
-
         return 0;
     }
 
@@ -180,7 +177,6 @@ class iNaturalistImportCommand extends Command
         }
 
         $geojsonString = json_encode($geojson);
-
         return DB::raw("ST_GeomFromGeoJSON('{$geojsonString}')");
     }
 
@@ -194,7 +190,7 @@ class iNaturalistImportCommand extends Command
      */
     private function saveObservation(array $data, string $ancestor, $geometry, int $id): void
     {
-        $observationUri = $data['uri'] ?? self::BASE_OBSERVATION_URL.$id;
+        $observationUri = $data['uri'] ?? self::BASE_OBSERVATION_URL . $id;
         $description = $this->buildDescription($data, $observationUri);
         $rawData = $this->buildRawData($data, $ancestor, $observationUri);
 
@@ -227,7 +223,7 @@ class iNaturalistImportCommand extends Command
     {
         $description = $data['description'] ?? '';
 
-        return $description."\nsource: ".$observationUri;
+        return $description . "\nsource: " . $observationUri;
     }
 
     /**
